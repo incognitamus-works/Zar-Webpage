@@ -529,25 +529,15 @@ em { font-style: italic; }
 
 .menu {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  align-items: start;
+  gap: 48px;
 }
-.category {
-  padding: 28px 28px 12px;
-  border-radius: var(--radius);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  scroll-margin-top: 76px;
-}
+.category { scroll-margin-top: 76px; }
 .category-head {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
   gap: 4px 14px;
-  padding-bottom: 16px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid var(--line);
+  margin-bottom: 16px;
 }
 .category-num {
   font-family: var(--serif);
@@ -573,20 +563,34 @@ em { font-style: italic; }
 .daypart:empty { display: none; }
 .daypart svg { font-size: 14px; }
 
-.item { padding: 14px 0; border-bottom: 1px dashed var(--line); }
-.item:last-child { border-bottom: 0; }
-.item-head { display: flex; align-items: baseline; gap: 12px; }
-.item h4 { font-size: 16px; font-weight: 600; letter-spacing: -.005em; }
-.leader {
-  flex: 1;
-  min-width: 16px;
-  border-bottom: 1px dotted rgba(255, 214, 170, .2);
-  transform: translateY(-4px);
+/* Drinks as equal-size square tiles */
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+  gap: 12px;
 }
+.item {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 1 / 1;
+  padding: 18px;
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  transition: border-color .25s, transform .25s var(--ease), background .25s;
+}
+.item:hover { border-color: rgba(226, 187, 132, .35); background: var(--surface-2); transform: translateY(-2px); }
+.item-head { display: contents; }
+.item h4 { order: 0; font-size: 16px; font-weight: 600; line-height: 1.3; letter-spacing: -.005em; }
+.leader { display: none; }
 .item-price {
+  order: 2;
+  margin-top: auto;
+  padding-top: 10px;
   font-family: var(--serif);
   font-weight: 600;
-  font-size: 18px;
+  font-size: 22px;
   color: var(--gold);
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
@@ -603,34 +607,8 @@ em { font-style: italic; }
   background: rgba(95, 224, 168, .1);
   vertical-align: 2px;
 }
-.variants { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-.variants span {
-  padding: 3px 10px;
-  border-radius: 999px;
-  font-size: 12.5px;
-  color: var(--muted);
-  background: rgba(255, 255, 255, .04);
-  border: 1px solid var(--line);
-}
-.tp { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-.tp span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 10px;
-  border-radius: 999px;
-  font-size: 12.5px;
-  color: var(--faint);
-  border: 1px solid var(--line);
-  transition: all .3s;
-}
-.tp span svg { font-size: 13px; }
-.tp span.is-now {
-  color: #1d0f06;
-  background: var(--gold);
-  border-color: var(--gold);
-  font-weight: 700;
-}
+.variants { order: 1; margin-top: 6px; font-size: 12.5px; line-height: 1.45; color: var(--muted); }
+.variants span:not(:last-child)::after { content: ", "; }
 
 .empty {
   grid-column: 1 / -1;
@@ -872,7 +850,6 @@ a.contact-card:hover .contact-go { color: var(--gold); transform: translate(2px,
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1000px) {
-  .menu { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; }
 }
 
@@ -905,7 +882,13 @@ a.contact-card:hover .contact-go { color: var(--gold); transform: translate(2px,
   .menu-toolbar { flex-direction: column; align-items: stretch; gap: 10px; padding: 10px 0; }
   .search { flex: none; }
   .chips-scroll { margin: 0 -16px; padding: 0 32px 0 16px; }
-  .category { padding: 22px 18px 8px; scroll-margin-top: 116px; }
+  .category { scroll-margin-top: 116px; }
+  .menu { gap: 36px; }
+  .items { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .item { padding: 14px; border-radius: 16px; }
+  .item h4 { font-size: 15px; }
+  .variants { font-size: 12px; }
+  .item-price { font-size: 20px; }
   .category-head h3 { font-size: 23px; }
 
   .filters .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px; }

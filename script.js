@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   $$("[data-time-price]").forEach((item) => {
     const price = isDay ? item.dataset.morning : item.dataset.evening
     $(".item-price", item).innerHTML = `${price} <small>KM</small>`
-    $(isDay ? ".tp-day" : ".tp-eve", item)?.classList.add("is-now")
   })
   $$("[data-daypart]").forEach((el) => {
     el.innerHTML = isDay
@@ -70,7 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const on = c.getAttribute("href") === `#${id}`
       c.classList.toggle("is-active", on)
       if (on && chipRow) {
-        chipRow.scrollTo({ left: c.offsetLeft - 16, behavior: "smooth" })
+        const offset = c.getBoundingClientRect().left - chipRow.getBoundingClientRect().left
+        chipRow.scrollTo({ left: chipRow.scrollLeft + offset - 16, behavior: "smooth" })
       }
     })
   }
