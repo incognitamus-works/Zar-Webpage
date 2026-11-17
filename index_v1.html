@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hookah Lounge - Premium Drinks & Flavors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<script>document.addEventListener("DOMContentLoaded", function () {
+    const hour = new Date().getHours();
+
+    document.querySelectorAll("[data-time-price]").forEach(item => {
+        const morning = item.dataset.morning;
+        const evening = item.dataset.evening;
+        const priceEl = item.querySelector(".price");
+        const noteEl = item.querySelector(".price-note");
+
+        if (hour >= 8 && hour < 16) {
+            priceEl.textContent = morning + " KM";
+            noteEl.textContent = "(08:00–16:00)";
+        } else {
+            priceEl.textContent = evening + " KM";
+            noteEl.textContent = "(16:00–24:00)";
+        }
+    });
+});</script>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">Nargila Bar Žar</h1>
+                <!-- Added hamburger menu button for mobile -->
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <!-- Added mobile-menu class to nav -->
+                <nav class="nav" id="nav">
+                    <a href="#home">Početna</a>
+                    <a href="#drinks">Pića</a>
+                    <a href="#hookah">Nargile</a>
+                    <a href="#contact">Kontakt</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h2 class="hero-title">Experience the Art of Relaxation</h2>
+                <p class="hero-subtitle">Premium hookah flavors and handcrafted beverages in an atmosphere of elegance</p>
+                <div class="hero-buttons">
+                    <a href="#drinks" class="btn btn-primary">View Menu</a>
+                    <a href="#contact" class="btn btn-secondary">Visit Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drinks Section -->
+    <section id="drinks" class="section">
+        <div class="container">
+            <h2 class="section-title">Katalog Pića</h2>
+            <p class="section-subtitle">Pažljivo odabrana pića za vrhunski ugođaj</p>
+            
+            <!-- Updated tabs to match the 5 drink categories from provided data -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="topli-napici">Topli Napici</button>
+                <button class="tab-btn" data-tab="negazirana">Negazirana Pića</button>
+                <button class="tab-btn" data-tab="gazirana">Gazirana Pića</button>
+                <button class="tab-btn" data-tab="energetska">Energetska Pića</button>
+                <button class="tab-btn" data-tab="specijaliteti">Specijaliteti</button>
+            </div>
+
+            <!-- Topli Napici (Hot Drinks) with exact items and prices from image -->
+            <div class="tab-content active" id="topli-napici">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Čaj</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Menta, Kamilica, Voćni
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Cappuccino</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-time-price data-morning="2.00" data-evening="2.50">
+                        <div class="menu-item-header">
+                            <h3>Espresso kafa</h3>
+                            <span class="price">-- KM</span>
+                        </div>
+                        <p class="menu-item-desc price-note"></p>
+                    </div>
+                    <div class="menu-item" data-time-price data-morning="2.50" data-evening="3.00">
+                        <div class="menu-item-header">
+                            <h3>Esspresso kafa s mlijekom</h3>
+                            <span class="price">-- KM</span>
+                        </div>
+                        <p class="menu-item-desc price-note"></p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Esspresso kafa s šlagom</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Hladni nescafe</h3>
+                            <span class="price">4.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Ice coffee</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Nescafe</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Topla čokolada</h3>
+                            <span class="price">4.50 KM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Negazirana Pića (Non-carbonated drinks) with exact items from image -->
+            <div class="tab-content" id="negazirana">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Active+ vitamin C</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Prirodni sok</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Aronija, Banana, Borovnica, Breskva, Jabuka, Jagoda, Naranča
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Cedevita</h3>
+                            <span class="price">2.50 KM</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Limun, Naranča
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Dvojni C</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Laško malt ALC 0,0%</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Ledeni čaj</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Breskva, Brusnica
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Prirodna voda</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Vivia Lemon&Limeta</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gazirana Pića (Carbonated drinks) with exact items from image -->
+            <div class="tab-content" id="gazirana">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Coca cola</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Classic, Zero, Cherry
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Cockta</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Exotic</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Fanta</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Jupi</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Naranča, Tandžerina
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Kisela voda</h3>
+                            <span class="price">2.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Orandžina</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Original, Rouge
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Schweppes</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Somersby ALC 0,0%</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Sprite</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Energetska Pića (Energy drinks) with exact items from image -->
+            <div class="tab-content" id="energetska">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Rooster</h3>
+                            <span class="price">5.00 KM</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Classic, Borovnica, Eukaliptus, Zero
+                        </p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Red Bull</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                        <p class="menu-item-desc">
+                            Classic, Zero
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specijaliteti (Specialties) as requested by user -->
+            <div class="tab-content" id="specijaliteti">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Cijeđeni Mix</h3>
+                            <span class="price">5.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Cijeđena Naranča</h3>
+                            <span class="price">4.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Limunada</h3>
+                            <span class="price">4.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Protein sa vodom</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Protein sa mlijekom</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Hookah Section -->
+<section id="hookah" class="section section-dark">
+    <div class="container">
+        <h2 class="section-title">Nargila Okusi</h2>
+        <p class="section-subtitle">Premium duhani za vrhunski nargila doživljaj</p>
+
+        <div class="menu-grid">
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <h3>Adalya</h3>
+                </div>
+                <p class="menu-item-desc">
+                    Baku Nights, Blue Ice, Cherry Mint, Cola Dragon, Double Melon, Freshberry, Hawaii, Ice Bonbon, Ice Lime, Joker 777, Jungle Jungle, Lady Kiler, Love 66, Moscow Evenings, Peach Mint, Sheik Money, Strong Menthol, Swiss Bonbon
+                </p>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <h3>Al Fakher</h3>
+                </div>
+                <p class="menu-item-desc">
+                    Borovnica, Dupla Jabuka, Grožđe, Malina, Menta, Nar
+                </p>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <h3>Tumbaki</h3>
+                </div>
+                <p class="menu-item-desc">
+                    Blackberry, Blue Flesh, Pistachio, Raspberry Punch, Triple Grape, Watermelon Flash
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Visit Us</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>Lokacija</h3>
+                    <p>Azize Šaćirbegović 94<br>Sarajevo, 71000</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Radno Vrijeme</h3>
+                    <p>Pon-Ned: 08:00-03:00</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Kontakt</h3>
+                    <a href="https://www.instagram.com/zarnargilacaffe"
+                       target="_blank"
+                       rel="noopener"
+                       aria-label="Instagram"
+                       style="display:inline-flex; align-items:center; gap:8px;">
+                
+                        <img src="instagram-icon.png"
+                             alt="Instagram"
+                             width="32"
+                             height="32">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy;incognitamus. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>        
+</body>
+</html>

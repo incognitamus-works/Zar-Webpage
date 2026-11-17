@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hookah Lounge - Premium Drinks & Flavors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">Hookah Lounge</h1>
+                <!-- Added hamburger menu button for mobile -->
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <!-- Added mobile-menu class to nav -->
+                <nav class="nav" id="nav">
+                    <a href="#home">Home</a>
+                    <a href="#drinks">Drinks</a>
+                    <a href="#hookah">Hookah</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h2 class="hero-title">Experience the Art of Relaxation</h2>
+                <p class="hero-subtitle">Premium hookah flavors and handcrafted beverages in an atmosphere of elegance</p>
+                <div class="hero-buttons">
+                    <a href="#drinks" class="btn btn-primary">View Menu</a>
+                    <a href="#contact" class="btn btn-secondary">Visit Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drinks Section -->
+    <section id="drinks" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Drinks</h2>
+            <p class="section-subtitle">Handcrafted beverages to complement your experience</p>
+            
+            <!-- Updated tabs to match the 5 drink categories from provided data -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="topli-napici">Topli Napici</button>
+                <button class="tab-btn" data-tab="negazirana">Negazirana Pića</button>
+                <button class="tab-btn" data-tab="gazirana">Gazirana Pića</button>
+                <button class="tab-btn" data-tab="energetska">Energetska Pića</button>
+                <button class="tab-btn" data-tab="specijaliteti">Specijaliteti</button>
+            </div>
+
+            <!-- Topli Napici (Hot Drinks) with exact items and prices from image -->
+            <div class="tab-content active" id="topli-napici">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Čaj</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Cappuccino</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Espresso kafa</h3>
+                            <span class="price">2.00 KM</span>
+                        </div>
+                        <p class="menu-item-desc">(08:00-16:00)</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Espresso kafa</h3>
+                            <span class="price">2.50 KM</span>
+                        </div>
+                        <p class="menu-item-desc">(16:00-24:00)</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Esspresso kafa s mlijekom</h3>
+                            <span class="price">2.50 KM</span>
+                        </div>
+                        <p class="menu-item-desc">(08:00-16:00)</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Esspresso kafa s mlijekom</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                        <p class="menu-item-desc">(16:00-24:00)</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Esspresso kafa s šlagom</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Hladni nescafe</h3>
+                            <span class="price">4.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Ice coffee</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Nescafe</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Topla čokolada</h3>
+                            <span class="price">4.50 KM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Negazirana Pića (Non-carbonated drinks) with exact items from image -->
+            <div class="tab-content" id="negazirana">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Active+ vitamin C</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Aronija</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Banana</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Borovnica</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Breskva</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Cedevita</h3>
+                            <span class="price">2.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Dvojni Č</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Jabuka</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Jagoda</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Laško malt ALC 0,0%</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Ledeni čaj breskva</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Ledeni čaj brusnica</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Naranča</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Prirodna voda</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Vivia Lemon&Limeta</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gazirana Pića (Carbonated drinks) with exact items from image -->
+            <div class="tab-content" id="gazirana">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Coca cola</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Coca cola zero</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Cockta</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Exotic</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Fanta</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Jupi naranča</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Jupi fandžorina</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Kisela voda</h3>
+                            <span class="price">2.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Oranžina</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Schweppes</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Somersby ALC 0,0%</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Sprite</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Energetska Pića (Energy drinks) with exact items from image -->
+            <div class="tab-content" id="energetska">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Red bull</h3>
+                            <span class="price">5.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Red bull zero</h3>
+                            <span class="price">5.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Rooster borovnica</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Rooster classic</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Rooster eukaliptus</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Rooster zero</h3>
+                            <span class="price">3.00 KM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specijaliteti (Specialties) as requested by user -->
+            <div class="tab-content" id="specijaliteti">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Cijeđeni Mix</h3>
+                            <span class="price">5.00 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Cijeđena Naranča</h3>
+                            <span class="price">4.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Limunada</h3>
+                            <span class="price">4.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Protein sa vodom</h3>
+                            <span class="price">3.50 KM</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Protein sa mlijekom</h3>
+                            <span class="price">4.00 KM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hookah Section -->
+    <section id="hookah" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Hookah Flavors</h2>
+            <p class="section-subtitle">Premium tobacco from the world's finest manufacturers</p>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="adalya">Adalya</button>
+                <button class="tab-btn" data-tab="alwaha">Al Waha</button>
+                <button class="tab-btn" data-tab="alfakher">Al Fakher</button>
+                <button class="tab-btn" data-tab="fumari">Fumari</button>
+            </div>
+
+            <div class="tab-content active" id="adalya">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Lady Killer</h3>
+                            <span class="price">$25</span>
+                        </div>
+                        <p class="menu-item-desc">Sweet melon with a refreshing twist</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Love 66</h3>
+                            <span class="price">$25</span>
+                        </div>
+                        <p class="menu-item-desc">Exotic passion fruit and grapefruit blend</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Blue Ice</h3>
+                            <span class="price">$25</span>
+                        </div>
+                        <p class="menu-item-desc">Cool blueberry with icy menthol</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Crazy Lemon</h3>
+                            <span class="price">$25</span>
+                        </div>
+                        <p class="menu-item-desc">Zesty lemon with mint undertones</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="alwaha">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Ice Raspberry</h3>
+                            <span class="price">$24</span>
+                        </div>
+                        <p class="menu-item-desc">Sweet raspberry with cooling sensation</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Peach</h3>
+                            <span class="price">$24</span>
+                        </div>
+                        <p class="menu-item-desc">Juicy and authentic peach flavor</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Grapefruit Mint</h3>
+                            <span class="price">$24</span>
+                        </div>
+                        <p class="menu-item-desc">Tangy grapefruit with fresh mint</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Watermelon</h3>
+                            <span class="price">$24</span>
+                        </div>
+                        <p class="menu-item-desc">Sweet summer watermelon</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="alfakher">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Double Apple</h3>
+                            <span class="price">$23</span>
+                        </div>
+                        <p class="menu-item-desc">Classic anise and apple combination</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Mint</h3>
+                            <span class="price">$23</span>
+                        </div>
+                        <p class="menu-item-desc">Pure and refreshing mint leaves</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Orange</h3>
+                            <span class="price">$23</span>
+                        </div>
+                        <p class="menu-item-desc">Natural citrus sweetness</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Grape</h3>
+                            <span class="price">$23</span>
+                        </div>
+                        <p class="menu-item-desc">Sweet purple grape flavor</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="fumari">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>White Gummi Bear</h3>
+                            <span class="price">$26</span>
+                        </div>
+                        <p class="menu-item-desc">Pineapple candy sweetness</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Blueberry Muffin</h3>
+                            <span class="price">$26</span>
+                        </div>
+                        <p class="menu-item-desc">Fresh baked blueberry pastry</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Lemon Mint</h3>
+                            <span class="price">$26</span>
+                        </div>
+                        <p class="menu-item-desc">Citrus with cooling mint finish</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Ambrosia</h3>
+                            <span class="price">$26</span>
+                        </div>
+                        <p class="menu-item-desc">Tropical melon medley</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Visit Us</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>Location</h3>
+                    <p>123 Lounge Street<br>City, State 12345</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Hours</h3>
+                    <p>Mon-Thu: 5PM - 12AM<br>Fri-Sat: 5PM - 2AM<br>Sunday: 5PM - 11PM</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Contact</h3>
+                    <p>Phone: (555) 123-4567<br>Email: info@hookahlounge.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hookah Lounge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

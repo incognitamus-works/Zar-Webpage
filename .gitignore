@@ -1,0 +1,12 @@
+# Dependencies / build output (Next.js version)
+node_modules/
+.next/
+out/
+
+# Local tooling
+.claude/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
